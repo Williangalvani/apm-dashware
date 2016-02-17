@@ -20,8 +20,7 @@
     <MathCalculator mathOperation="Divide" parameter="1000" useConstantParameter="True">
       <InputColumns>
         <InputColumn>Time_NoNull</InputColumn>
-        <InputColumn>
-        </InputColumn>
+        <InputColumn></InputColumn>
       </InputColumns>
       <OutputColumns>
         <OutputColumn>iTime</OutputColumn>
@@ -60,7 +59,18 @@
       <OutputColumns>
         <OutputColumn>iAltitude (m)</OutputColumn>
       </OutputColumns>
-    </LinearInterpolator>
+    </LinearInterpolator>    
+	<AscentDescentCalculator>
+      <InputColumns>
+        <InputColumn>iAltitude (m)</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>Total Ascent Meters</OutputColumn>
+        <OutputColumn>Total Descent Meters</OutputColumn>
+        <OutputColumn>Ground-Based Altitude Min</OutputColumn>
+        <OutputColumn>Ground-Based Altitude Max</OutputColumn>
+      </OutputColumns>
+    </AscentDescentCalculator>
     <DistanceConverter inputUnit="Meters" outputUnit="Feet">
       <InputColumns>
         <InputColumn>iAltitude (m)</InputColumn>
@@ -77,6 +87,14 @@
         <OutputColumn>iNumSats</OutputColumn>
       </OutputColumns>
     </UsePreviousValueCalculator>
+    <UsePreviousValueCalculator>
+      <InputColumns>
+        <InputColumn>GPS_HDOP</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>iHDop</OutputColumn>
+      </OutputColumns>
+    </UsePreviousValueCalculator>
     <DistanceTravelledCalculator inputUnit="Feet" outputUnit="Feet">
       <InputColumns>
         <InputColumn>GPS_iLon (feet)</InputColumn>
@@ -86,6 +104,14 @@
         <OutputColumn>iTotalDistance (feet)</OutputColumn>
       </OutputColumns>
     </DistanceTravelledCalculator>
+    <DistanceConverter inputUnit="Feet" outputUnit="Meters">
+      <InputColumns>
+        <InputColumn>iTotalDistance (feet)</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>iTotalDistance Meters</OutputColumn>
+      </OutputColumns>
+    </DistanceConverter>
     <DistanceConverter inputUnit="Feet" outputUnit="Miles">
       <InputColumns>
         <InputColumn>iTotalDistance (feet)</InputColumn>
@@ -407,6 +433,15 @@
         <OutputColumn>iAbsoluteSpeed (kph)</OutputColumn>
       </OutputColumns>
     </MathCalculator>
+    <MathCalculator mathOperation="Divide" parameter="100" useConstantParameter="True">
+      <InputColumns>
+        <InputColumn>CURR_Curr</InputColumn>
+        <InputColumn></InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>iCurrent</OutputColumn>
+      </OutputColumns>
+    </MathCalculator>
   </Calculators>
   <ColumnMappings>
     <ColumnMapping inputColumnText="iTime" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="&lt;Required&gt;" dataType="Data Running Time, Seconds" />
@@ -419,9 +454,16 @@
     <ColumnMapping inputColumnText="iAbsoluteSpeed (kph)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Air Speed (KPH)" />
     <ColumnMapping inputColumnText="iAltitude (m)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Ground-Based Altitude (Meters)" />
     <ColumnMapping inputColumnText="iAltitude (feet)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Ground-Based Altitude (Feet)" />
+    <ColumnMapping inputColumnText="Total Ascent Meters" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Total Ascent (Meters)" />
+    <ColumnMapping inputColumnText="Total Descent Meters" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Total Descent (Meters)" />
+    <ColumnMapping inputColumnText="Ground-Based Altitude Min" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Ground-Based Altitude Min (Meters)" />
+    <ColumnMapping inputColumnText="Ground-Based Altitude Max" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Ground-Based Altitude Max (Meters)" />
     <ColumnMapping inputColumnText="iNumSats" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Satellite Count" />
-    <ColumnMapping inputColumnText="iThrottle (%)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Steering, Throttle, Brakes" dataType="Throttle Position" />
-    <ColumnMapping inputColumnText="iTotalDistance (feet)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Distance (Feet)" />
+    <ColumnMapping inputColumnText="iHDop" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Satellite HDop" />
+	<ColumnMapping inputColumnText="CurrentMode" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Flightmode" />
+	<ColumnMapping inputColumnText="iThrottle (%)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Steering, Throttle, Brakes" dataType="Throttle Position" />
+	<ColumnMapping inputColumnText="iTotalDistance (feet)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Distance (Feet)" />
+    <ColumnMapping inputColumnText="iTotalDistance Meters" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Distance (Meters)" />
     <ColumnMapping inputColumnText="iTotalDistance (miles)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Distance (Miles)" />
     <ColumnMapping inputColumnText="iRoll" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Roll" />
     <ColumnMapping inputColumnText="iPitch" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Pitch" />
@@ -439,5 +481,6 @@
     <ColumnMapping inputColumnText="iClimbRate (m/s)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Vertical Speed (m/s)" />
     <ColumnMapping inputColumnText="iClimbRate (mph)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Vertical Speed (MPH)" />
     <ColumnMapping inputColumnText="iClimbRate (kph)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Vertical Speed (KPH)" />
+    <ColumnMapping inputColumnText="iCurrent" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Battery Ampere" />
   </ColumnMappings>
 </DataProfile>
