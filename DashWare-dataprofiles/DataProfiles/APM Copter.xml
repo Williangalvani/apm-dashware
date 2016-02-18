@@ -59,8 +59,16 @@
       <OutputColumns>
         <OutputColumn>iAltitude (m)</OutputColumn>
       </OutputColumns>
-    </LinearInterpolator>    
-	<AscentDescentCalculator>
+    </LinearInterpolator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>GPS_Alt</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>i_Sea_Altitude (m)</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+    <AscentDescentCalculator>
       <InputColumns>
         <InputColumn>iAltitude (m)</InputColumn>
       </InputColumns>
@@ -77,6 +85,14 @@
       </InputColumns>
       <OutputColumns>
         <OutputColumn>iAltitude (feet)</OutputColumn>
+      </OutputColumns>
+    </DistanceConverter>
+    <DistanceConverter inputUnit="Meters" outputUnit="Feet">
+      <InputColumns>
+        <InputColumn>i_Sea_Altitude (m)</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>i_Sea_Altitude (feet)</OutputColumn>
       </OutputColumns>
     </DistanceConverter>
     <UsePreviousValueCalculator>
@@ -263,6 +279,16 @@
         <OutputColumn>iThrottle (%/100)</OutputColumn>
       </OutputColumns>
     </MathCalculator>
+    <MathCalculator mathOperation="Divide" parameter="10" useConstantParameter="True">
+      <InputColumns>
+        <InputColumn>iThrottle (%*1000)</InputColumn>
+        <InputColumn>
+        </InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>iThrottle (%)</OutputColumn>
+      </OutputColumns>
+    </MathCalculator>
     <MathCalculator mathOperation="Multiply" parameter="0" useConstantParameter="False">
       <InputColumns>
         <InputColumn>iThrottle (%/100)</InputColumn>
@@ -436,16 +462,25 @@
     <MathCalculator mathOperation="Divide" parameter="100" useConstantParameter="True">
       <InputColumns>
         <InputColumn>CURR_Curr</InputColumn>
-        <InputColumn></InputColumn>
+        <InputColumn>
+        </InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>iAmpere</OutputColumn>
+      </OutputColumns>
+    </MathCalculator>
+    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>iAmpere</InputColumn>
       </InputColumns>
       <OutputColumns>
         <OutputColumn>iCurrent</OutputColumn>
       </OutputColumns>
-    </MathCalculator>
+    </LinearInterpolator>
   </Calculators>
   <ColumnMappings>
     <ColumnMapping inputColumnText="iTime" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="&lt;Required&gt;" dataType="Data Running Time, Seconds" />
-    <ColumnMapping inputColumnText="GPS_iLon" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Longitude / X Position (Degrees)" />
+	<ColumnMapping inputColumnText="GPS_iLon" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Longitude / X Position (Degrees)" />
     <ColumnMapping inputColumnText="GPS_iLat" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Latitude / Y Position (Degrees)" />
     <ColumnMapping inputColumnText="GPS_iLon (feet)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Longitude / X Position (Feet)" />
     <ColumnMapping inputColumnText="GPS_iLat (feet)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Latitude / Y Position (Feet)" />
@@ -458,11 +493,13 @@
     <ColumnMapping inputColumnText="Total Descent Meters" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Total Descent (Meters)" />
     <ColumnMapping inputColumnText="Ground-Based Altitude Min" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Ground-Based Altitude Min (Meters)" />
     <ColumnMapping inputColumnText="Ground-Based Altitude Max" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Ground-Based Altitude Max (Meters)" />
+    <ColumnMapping inputColumnText="i_Sea_Altitude (m)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Altitude / Z Position (Meters)" />
+    <ColumnMapping inputColumnText="i_Sea_Altitude (feet)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Altitude / Z Position (Feet)" />
     <ColumnMapping inputColumnText="iNumSats" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Satellite Count" />
     <ColumnMapping inputColumnText="iHDop" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Satellite HDop" />
-	<ColumnMapping inputColumnText="CurrentMode" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Flightmode" />
-	<ColumnMapping inputColumnText="iThrottle (%)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Steering, Throttle, Brakes" dataType="Throttle Position" />
-	<ColumnMapping inputColumnText="iTotalDistance (feet)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Distance (Feet)" />
+    <ColumnMapping inputColumnText="CurrentMode" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Flightmode" />
+    <ColumnMapping inputColumnText="iThrottle (%)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Steering, Throttle, Brakes" dataType="Throttle Position" />
+    <ColumnMapping inputColumnText="iTotalDistance (feet)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Distance (Feet)" />
     <ColumnMapping inputColumnText="iTotalDistance Meters" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Distance (Meters)" />
     <ColumnMapping inputColumnText="iTotalDistance (miles)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Distance (Miles)" />
     <ColumnMapping inputColumnText="iRoll" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Roll" />
@@ -474,8 +511,8 @@
     <ColumnMapping inputColumnText="iGroundSpeed (kph)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed (KPH)" />
     <ColumnMapping inputColumnText="iEngine RPM" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Engine RPM" />
     <ColumnMapping inputColumnText="iVoltage" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Battery Voltage" />
-    <ColumnMapping inputColumnText="iRoll Desired" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Autopilot" dataType="Roll Demanded" />
-    <ColumnMapping inputColumnText="iPitch Desired" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Autopilot" dataType="Pitch Demanded" />
+    <ColumnMapping inputColumnText="iRoll Desired" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Generic" dataType="Other" />
+    <ColumnMapping inputColumnText="iPitch Desired" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Generic" dataType="Other" />
     <ColumnMapping inputColumnText="iStraightDistanceFromHome (m)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Distance from Beginning (Meters)" />
     <ColumnMapping inputColumnText="iStraightDistanceFromHome (feet)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Distance from Beginning (Feet)" />
     <ColumnMapping inputColumnText="iClimbRate (m/s)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Vertical Speed (m/s)" />
