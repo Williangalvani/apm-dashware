@@ -1,0 +1,29 @@
+<Project version="2">
+  <Information logoX="-1" logoY="-1" logoWidth="-1" logoHeight="-1">
+    <StartTitle enabled="False" duration="3" fadeIn="False" fadeInDuration="1" fadeOut="False" fadeOutDuration="1" fontRectWidth="1" fontRectHeight="1" fontFace="Arial" fontSize="64" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="center" fontVAlign="center" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255" backgroundTransparency="0" backgroundRed="255" backgroundGreen="255" backgroundBlue="255">
+    </StartTitle>
+    <EndTitle enabled="False" duration="3" fadeIn="False" fadeInDuration="1" fadeOut="False" fadeOutDuration="1" fontRectWidth="1" fontRectHeight="1" fontFace="Arial" fontSize="64" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="center" fontVAlign="center" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255" backgroundTransparency="0" backgroundRed="255" backgroundGreen="255" backgroundBlue="255">Produced with
+DashWare</EndTitle>
+  </Information>
+  <InputSettings />
+  <OutputSettings>
+    <Video />
+    <OverscanSettings useSafeArea="False" showSafeArea="True" percentage="10" />
+  </OutputSettings>
+  <GaugeSettings>
+    <Gauge name="Heli" transparency="1" x="166.9449" y="0.9173431">
+      <InputMapping gaugeInput="Speed (KPH)" fromFastestLapSamePos="False" />
+      <InputMapping gaugeInput="Ground-Based Altitude (Meters)" fromFastestLapSamePos="False" />
+      <InputMapping gaugeInput="Vertical Speed (m/s)" fromFastestLapSamePos="False" />
+      <InputMapping gaugeInput="Satellite Count" fromFastestLapSamePos="False" />
+      <InputMapping gaugeInput="Satellite HDop" fromFastestLapSamePos="False" />
+      <InputMapping gaugeInput="Battery Voltage" fromFastestLapSamePos="False" />
+      <InputMapping gaugeInput="Battery Ampere" fromFastestLapSamePos="False" />
+      <InputMapping gaugeInput="Distance (Meters)" fromFastestLapSamePos="False" />
+      <InputMapping gaugeInput="Distance from Beginning (Meters)" fromFastestLapSamePos="False" />
+      <InputMapping gaugeInput="Heading" fromFastestLapSamePos="False" />
+    </Gauge>
+  </GaugeSettings>
+  <ChartSettings>
+  </ChartSettings>
+</Project>
