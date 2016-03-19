@@ -11,7 +11,7 @@
     <OverscanSettings useSafeArea="False" showSafeArea="True" percentage="10" />
   </OutputSettings>
   <GaugeSettings>
-    <Gauge name="Flytrex Glass" transparency="1" x="-1.766438" y="539.7148">
+    <Gauge name="Flytrex Glass" transparency="1" x="2.071087" y="538.7148">
       <InputMapping gaugeInput="Latitude / Y Position (Degrees)" fromFastestLapSamePos="False" />
       <InputMapping gaugeInput="Longitude / X Position (Degrees)" fromFastestLapSamePos="False" />
       <InputMapping gaugeInput="Heading" fromFastestLapSamePos="False" />
