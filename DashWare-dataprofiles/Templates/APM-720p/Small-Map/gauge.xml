@@ -1,0 +1,42 @@
+<Gauge version="3" x="0" y="0" readOnly="False" width="152" height="112" transparency="1" thumbnailBackgroundTransparency="1" thumbnailBackgroundRed="135" thumbnailBackgroundGreen="206" thumbnailBackgroundBlue="235">
+  <Components>
+    <Map x="2" y="2" width="150" height="110" align="Center" vAlign="Center" EvenPenWidth="3" EvenTransparency="0.6431373" EvenRed="0" EvenGreen="0" EvenBlue="0" OddPenWidth="3" OddTransparency="0.6431373" OddRed="0" OddGreen="0" OddBlue="0">
+      <Components>
+        <MapDot x="0" y="0" radius="5" transparency="0.6470588" red="0" green="0" blue="0">
+          <Inputs>
+            <Input name="X">X</Input>
+            <Input name="Y">Y</Input>
+          </Inputs>
+        </MapDot>
+      </Components>
+      <Inputs>
+        <Input name="X">X</Input>
+        <Input name="Y">Y</Input>
+      </Inputs>
+    </Map>
+    <Map x="0" y="0" width="150" height="110" align="Center" vAlign="Center" EvenPenWidth="3" EvenTransparency="1" EvenRed="4" EvenGreen="5" EvenBlue="125" OddPenWidth="3" OddTransparency="1" OddRed="4" OddGreen="5" OddBlue="125">
+      <Components>
+        <MapDot x="0" y="0" radius="5" transparency="1" red="255" green="0" blue="0">
+          <Inputs>
+            <Input name="X">X</Input>
+            <Input name="Y">Y</Input>
+          </Inputs>
+        </MapDot>
+        <MapDot x="0" y="0" radius="3" transparency="1" red="255" green="228" blue="0">
+          <Inputs>
+            <Input name="X">X</Input>
+            <Input name="Y">Y</Input>
+          </Inputs>
+        </MapDot>
+      </Components>
+      <Inputs>
+        <Input name="X">X</Input>
+        <Input name="Y">Y</Input>
+      </Inputs>
+    </Map>
+  </Components>
+  <Inputs>
+    <Input category="Positional" name="Longitude / X Position (Feet)" fromFastestLapSamePos="False">X</Input>
+    <Input category="Positional" name="Latitude / Y Position (Feet)" fromFastestLapSamePos="False">Y</Input>
+  </Inputs>
+</Gauge>
