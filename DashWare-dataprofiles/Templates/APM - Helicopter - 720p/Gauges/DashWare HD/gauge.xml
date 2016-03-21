@@ -1,0 +1,6 @@
+<Gauge version="2" x="0" y="0" readOnly="False" width="400" height="145" thumbnailBackgroundTransparency="1" thumbnailBackgroundRed="135" thumbnailBackgroundGreen="206" thumbnailBackgroundBlue="235">
+  <Components>
+    <Image x="0" y="0" transparency="1" src="Logo_400_noback1.png" width="400" height="145" />
+  </Components>
+  <Inputs />
+</Gauge>

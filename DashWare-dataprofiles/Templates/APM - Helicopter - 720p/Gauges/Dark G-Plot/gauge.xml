@@ -1,0 +1,31 @@
+<Gauge version="2" x="0" y="0" readOnly="False" width="201.177" height="191.3635" thumbnailBackgroundTransparency="1" thumbnailBackgroundRed="135" thumbnailBackgroundGreen="206" thumbnailBackgroundBlue="235">
+  <Components>
+    <FilledRectangle x="0" y="0" width="201.177" height="191.3635" roundCorners="True" cornerRadius="32.71171" transparency="1" red="0" green="0" blue="0">
+      <Components>
+        <FilledRectangle x="3.27121" y="3.271149" width="194.6347" height="184.8212" roundCorners="True" cornerRadius="32.71171" transparency="1" red="112" green="105" blue="105">
+          <Components>
+            <FilledRectangle x="3.271088" y="3.27121" width="188.0923" height="178.2788" roundCorners="True" cornerRadius="32.71171" transparency="1" red="60" green="55" blue="55" />
+          </Components>
+        </FilledRectangle>
+      </Components>
+    </FilledRectangle>
+    <GPlot x="99.36182" y="95.68175" radius="81.77928" maxG="1" flipXAxis="False" flipYAxis="False" minorUnit="0.5" majorUnit="1" ballRadius="6.542343" showTail="True" tailDuration="10" tailStartRadius="4.906757" tailEndRadius="1.635586" axesPenWidth="1.635586" axesTransparency="1" axesRed="255" axesGreen="255" axesBlue="255" minorPenWidth="1.635586" minorTransparency="0.254902" minorRed="255" minorGreen="255" minorBlue="255" majorPenWidth="1.635586" majorTransparency="1" majorRed="255" majorGreen="255" majorBlue="255" stickPenWidth="1.635586" stickTransparency="1" stickRed="0" stickGreen="0" stickBlue="0" ballTransparency="1" ballRed="2" ballGreen="2" ballBlue="2" tailStartTransparency="0.1764706" tailStartRed="0" tailStartGreen="30" tailStartBlue="255" tailEndTransparency="0.01568628" tailEndRed="0" tailEndGreen="30" tailEndBlue="255" fontFace="Arial" fontSize="13.08469" fontBold="True" fontItalic="True" fontUnderline="False" fontDirection="horizontal" fontAlign="right" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255">
+      <Components>
+        <GPlot x="5.340576E-05" y="1.525879E-05" radius="81.77928" maxG="1" flipXAxis="False" flipYAxis="False" minorUnit="0.5" majorUnit="1" ballRadius="4.906757" showTail="False" tailDuration="10" tailStartRadius="4.906757" tailEndRadius="1.635586" axesPenWidth="1.635586" axesTransparency="0" axesRed="255" axesGreen="255" axesBlue="255" minorPenWidth="1.635586" minorTransparency="0" minorRed="255" minorGreen="255" minorBlue="255" majorPenWidth="1.635586" majorTransparency="0" majorRed="255" majorGreen="255" majorBlue="255" stickPenWidth="1.635586" stickTransparency="0" stickRed="255" stickGreen="255" stickBlue="255" ballTransparency="1" ballRed="255" ballGreen="0" ballBlue="0" tailStartTransparency="0.09803922" tailStartRed="0" tailStartGreen="30" tailStartBlue="255" tailEndTransparency="0.01568628" tailEndRed="0" tailEndGreen="30" tailEndBlue="255" fontFace="Arial" fontSize="14.72027" fontBold="True" fontItalic="True" fontUnderline="False" fontDirection="horizontal" fontAlign="right" fontVAlign="top" fontTransparency="0" fontRed="255" fontGreen="255" fontBlue="255">
+          <Inputs>
+            <Input name="Lateral G">Lateral Gs</Input>
+            <Input name="Acceleration G">Acceleration Gs</Input>
+          </Inputs>
+        </GPlot>
+      </Components>
+      <Inputs>
+        <Input name="Lateral G">Lateral Gs</Input>
+        <Input name="Acceleration G">Acceleration Gs</Input>
+      </Inputs>
+    </GPlot>
+  </Components>
+  <Inputs>
+    <Input category="G-Forces" name="Acceleration Gs" fromFastestLapSamePos="False">Acceleration Gs</Input>
+    <Input category="G-Forces" name="Lateral Gs" fromFastestLapSamePos="False">Lateral Gs</Input>
+  </Inputs>
+</Gauge>
