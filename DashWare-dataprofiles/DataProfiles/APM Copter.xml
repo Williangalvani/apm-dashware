@@ -212,8 +212,6 @@
     <MathCalculator mathOperation="Divide" parameter="100" useConstantParameter="True">
       <InputColumns>
         <InputColumn>iGroundSpeed (cm/s)</InputColumn>
-        <InputColumn>
-        </InputColumn>
       </InputColumns>
       <OutputColumns>
         <OutputColumn>iGroundSpeed (m/s)</OutputColumn>
@@ -469,14 +467,14 @@
         <OutputColumn>iAmpere</OutputColumn>
       </OutputColumns>
     </MathCalculator>
-    <LinearInterpolator filterValues="False" standardDevCeiling="5">
+    <AveragingCalculator parameter="1" mode="Simple" direction="Backwards">
       <InputColumns>
         <InputColumn>iAmpere</InputColumn>
       </InputColumns>
       <OutputColumns>
         <OutputColumn>iCurrent</OutputColumn>
       </OutputColumns>
-    </LinearInterpolator>
+    </AveragingCalculator>
   </Calculators>
   <ColumnMappings>
     <ColumnMapping inputColumnText="iTime" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="&lt;Required&gt;" dataType="Data Running Time, Seconds" />
