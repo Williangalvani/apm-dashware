@@ -24,7 +24,7 @@
     <Rectangle x="0" y="180" width="384" height="90" roundCorners="False" cornerRadius="5" penWidth="1" transparency="1" red="255" green="255" blue="255">
       <Components>
         <Text x="6" y="4" text="Verticle (m/s)" fontRectWidth="244" fontRectHeight="41" fontFace="Estrangelo Edessa" fontSize="26" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="left" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255" />
-        <DynamicText x="100" y="34" displayType="Decimal" decimalPrecision="2" showPlus="False" restrictRange="False" restrictedMinValue="-3.40282346638529E+38" restrictedMaxValue="3.40282346638529E+38" convertFromGMT="True" fontRectWidth="275" fontRectHeight="60" fontFace="Estrangelo Edessa" fontSize="42" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="right" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255">
+        <DynamicText x="100" y="34" displayType="Decimal" decimalPrecision="1" showPlus="False" restrictRange="False" restrictedMinValue="-3.40282346638529E+38" restrictedMaxValue="3.40282346638529E+38" convertFromGMT="True" fontRectWidth="275" fontRectHeight="60" fontFace="Estrangelo Edessa" fontSize="42" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="right" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255">
           <Inputs>
             <Input name="Value">Vertical Speed (m/s)</Input>
           </Inputs>
@@ -74,7 +74,7 @@
     <Rectangle x="767" y="90" width="384" height="90" roundCorners="False" cornerRadius="5" penWidth="1" transparency="1" red="255" green="255" blue="255">
       <Components>
         <Text x="6" y="4" text="Battery Volts" fontRectWidth="244" fontRectHeight="41" fontFace="Estrangelo Edessa" fontSize="26" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="left" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255" />
-        <DynamicText x="100" y="34" displayType="Decimal" decimalPrecision="2" showPlus="False" restrictRange="False" restrictedMinValue="-3.40282346638529E+38" restrictedMaxValue="3.40282346638529E+38" convertFromGMT="True" fontRectWidth="275" fontRectHeight="60" fontFace="Estrangelo Edessa" fontSize="42" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="right" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255">
+        <DynamicText x="100" y="34" displayType="Decimal" decimalPrecision="1" showPlus="False" restrictRange="False" restrictedMinValue="-3.40282346638529E+38" restrictedMaxValue="3.40282346638529E+38" convertFromGMT="True" fontRectWidth="275" fontRectHeight="60" fontFace="Estrangelo Edessa" fontSize="42" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="right" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255">
           <Inputs>
             <Input name="Value">Battery Voltage</Input>
           </Inputs>
@@ -84,7 +84,7 @@
     <Rectangle x="767" y="180" width="384" height="90" roundCorners="False" cornerRadius="5" penWidth="1" transparency="1" red="255" green="255" blue="255">
       <Components>
         <Text x="6" y="4" text="Battery Amp" fontRectWidth="244" fontRectHeight="41" fontFace="Estrangelo Edessa" fontSize="26" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="left" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255" />
-        <DynamicText x="100" y="34" displayType="Decimal" decimalPrecision="2" showPlus="False" restrictRange="False" restrictedMinValue="-3.40282346638529E+38" restrictedMaxValue="3.40282346638529E+38" convertFromGMT="True" fontRectWidth="275" fontRectHeight="60" fontFace="Estrangelo Edessa" fontSize="42" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="right" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255">
+        <DynamicText x="100" y="34" displayType="Decimal" decimalPrecision="1" showPlus="False" restrictRange="False" restrictedMinValue="-3.40282346638529E+38" restrictedMaxValue="3.40282346638529E+38" convertFromGMT="True" fontRectWidth="275" fontRectHeight="60" fontFace="Estrangelo Edessa" fontSize="42" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="right" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255">
           <Inputs>
             <Input name="Value">Battery Ampere</Input>
           </Inputs>
@@ -124,7 +124,7 @@
     <Rectangle x="1534" y="0" width="384" height="90" roundCorners="False" cornerRadius="5" penWidth="1" transparency="1" red="255" green="255" blue="255">
       <Components>
         <Text x="6" y="4" text="Throttle" fontRectWidth="244" fontRectHeight="41" fontFace="Estrangelo Edessa" fontSize="26" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="left" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255" />
-        <DynamicText x="85" y="34" displayType="Decimal" decimalPrecision="2" showPlus="False" restrictRange="False" restrictedMinValue="-3.40282346638529E+38" restrictedMaxValue="3.40282346638529E+38" convertFromGMT="True" fontRectWidth="180" fontRectHeight="60" fontFace="Estrangelo Edessa" fontSize="42" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="right" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255">
+        <DynamicText x="85" y="34" displayType="Integer" decimalPrecision="1" showPlus="False" restrictRange="False" restrictedMinValue="-3.40282346638529E+38" restrictedMaxValue="3.40282346638529E+38" convertFromGMT="True" fontRectWidth="180" fontRectHeight="60" fontFace="Estrangelo Edessa" fontSize="42" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="right" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255">
           <Inputs>
             <Input name="Value">Throttle Position</Input>
           </Inputs>
@@ -145,7 +145,7 @@
     <Rectangle x="1534" y="180" width="384" height="90" roundCorners="False" cornerRadius="5" penWidth="1" transparency="1" red="255" green="255" blue="255">
       <Components>
         <Text x="6" y="4" text="Sea Level Alt" fontRectWidth="244" fontRectHeight="41" fontFace="Estrangelo Edessa" fontSize="26" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="left" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255" />
-        <DynamicText x="49" y="32" displayType="Decimal" decimalPrecision="2" showPlus="False" restrictRange="False" restrictedMinValue="-3.40282346638529E+38" restrictedMaxValue="3.40282346638529E+38" convertFromGMT="True" fontRectWidth="300" fontRectHeight="60" fontFace="Estrangelo Edessa" fontSize="42" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="right" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255">
+        <DynamicText x="49" y="32" displayType="Integer" decimalPrecision="1" showPlus="False" restrictRange="False" restrictedMinValue="-3.40282346638529E+38" restrictedMaxValue="3.40282346638529E+38" convertFromGMT="True" fontRectWidth="300" fontRectHeight="60" fontFace="Estrangelo Edessa" fontSize="42" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="right" fontVAlign="top" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255">
           <Inputs>
             <Input name="Value">Altitude / Z Position (Meters)</Input>
           </Inputs>

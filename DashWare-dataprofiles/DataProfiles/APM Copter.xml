@@ -243,10 +243,10 @@
     </UsePreviousValueCalculator>
     <LinearInterpolator filterValues="False" standardDevCeiling="5">
       <InputColumns>
-        <InputColumn>CURR_Throttle</InputColumn>
+        <InputColumn>CTUN_ThO</InputColumn>
       </InputColumns>
       <OutputColumns>
-        <OutputColumn>iThrottle (%*1000)</OutputColumn>
+        <OutputColumn>iThrottle (%/100)</OutputColumn>
       </OutputColumns>
     </LinearInterpolator>
     <LinearInterpolator filterValues="False" standardDevCeiling="5">
@@ -254,32 +254,12 @@
         <InputColumn>CURR_Volt</InputColumn>
       </InputColumns>
       <OutputColumns>
-        <OutputColumn>iVoltage (x100)</OutputColumn>
-      </OutputColumns>
-    </LinearInterpolator>
-    <MathCalculator mathOperation="Divide" parameter="100" useConstantParameter="True">
-      <InputColumns>
-        <InputColumn>iVoltage (x100)</InputColumn>
-        <InputColumn>
-        </InputColumn>
-      </InputColumns>
-      <OutputColumns>
         <OutputColumn>iVoltage</OutputColumn>
       </OutputColumns>
-    </MathCalculator>
-    <MathCalculator mathOperation="Divide" parameter="1000" useConstantParameter="True">
+    </LinearInterpolator>
+    <MathCalculator mathOperation="Multiply" parameter="100" useConstantParameter="True">
       <InputColumns>
-        <InputColumn>iThrottle (%*1000)</InputColumn>
-        <InputColumn>
-        </InputColumn>
-      </InputColumns>
-      <OutputColumns>
-        <OutputColumn>iThrottle (%/100)</OutputColumn>
-      </OutputColumns>
-    </MathCalculator>
-    <MathCalculator mathOperation="Divide" parameter="10" useConstantParameter="True">
-      <InputColumns>
-        <InputColumn>iThrottle (%*1000)</InputColumn>
+        <InputColumn>iThrottle (%/100)</InputColumn>
         <InputColumn>
         </InputColumn>
       </InputColumns>
@@ -296,7 +276,7 @@
         <OutputColumn>iEngineVoltage</OutputColumn>
       </OutputColumns>
     </MathCalculator>
-    <MathCalculator mathOperation="Multiply" parameter="880" useConstantParameter="True">
+    <MathCalculator mathOperation="Multiply" parameter="810" useConstantParameter="True">
       <InputColumns>
         <InputColumn>iEngineVoltage</InputColumn>
         <InputColumn>
@@ -457,22 +437,28 @@
         <OutputColumn>iAbsoluteSpeed (kph)</OutputColumn>
       </OutputColumns>
     </MathCalculator>
-    <MathCalculator mathOperation="Divide" parameter="100" useConstantParameter="True">
+	<LinearInterpolator filterValues="False" standardDevCeiling="5">
       <InputColumns>
         <InputColumn>CURR_Curr</InputColumn>
-        <InputColumn>
-        </InputColumn>
-      </InputColumns>
-      <OutputColumns>
-        <OutputColumn>iAmpere</OutputColumn>
-      </OutputColumns>
-    </MathCalculator>
-    <AveragingCalculator parameter="1" mode="Simple" direction="Backwards">
-      <InputColumns>
-        <InputColumn>iAmpere</InputColumn>
       </InputColumns>
       <OutputColumns>
         <OutputColumn>iCurrent</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>	
+	<AveragingCalculator parameter="5" mode="Simple" direction="Backwards">
+      <InputColumns>
+        <InputColumn>iVoltage</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>iVoltageAverage</OutputColumn>
+      </OutputColumns>
+    </AveragingCalculator>
+	<AveragingCalculator parameter="3" mode="Simple" direction="Backwards">
+      <InputColumns>
+        <InputColumn>iCurrent</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>iCurrentAverage</OutputColumn>
       </OutputColumns>
     </AveragingCalculator>
   </Calculators>
@@ -508,7 +494,7 @@
     <ColumnMapping inputColumnText="iGroundSpeed (mph)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed (MPH)" />
     <ColumnMapping inputColumnText="iGroundSpeed (kph)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Speed (KPH)" />
     <ColumnMapping inputColumnText="iEngine RPM" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Engine RPM" />
-    <ColumnMapping inputColumnText="iVoltage" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Battery Voltage" />
+    <ColumnMapping inputColumnText="iVoltageAverage" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Battery Voltage" />
     <ColumnMapping inputColumnText="iRoll Desired" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Generic" dataType="Other" />
     <ColumnMapping inputColumnText="iPitch Desired" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Generic" dataType="Other" />
     <ColumnMapping inputColumnText="iStraightDistanceFromHome (m)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Positional" dataType="Distance from Beginning (Meters)" />
@@ -516,6 +502,6 @@
     <ColumnMapping inputColumnText="iClimbRate (m/s)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Vertical Speed (m/s)" />
     <ColumnMapping inputColumnText="iClimbRate (mph)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Vertical Speed (MPH)" />
     <ColumnMapping inputColumnText="iClimbRate (kph)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Vertical Speed (KPH)" />
-    <ColumnMapping inputColumnText="iCurrent" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Battery Ampere" />
+    <ColumnMapping inputColumnText="iCurrentAverage" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Battery Ampere" />
   </ColumnMappings>
 </DataProfile>
