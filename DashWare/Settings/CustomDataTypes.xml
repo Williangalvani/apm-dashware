@@ -4,6 +4,7 @@
   </Category>
   <Category name="Engine, Transmission">
     <DataType>Battery Ampere</DataType>
+    <DataType>Fuel Percentage</DataType>
   </Category>
   <Category name="Flight Controller">
     <DataType>Flightmode</DataType>	
