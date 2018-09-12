@@ -4,6 +4,7 @@
   </Category>
   <Category name="Engine, Transmission">
     <DataType>Flightmode</DataType>
-    <DataType>Battery Ampere</DataType>
+    <DataType>Battery Ampere</DataType>	
+    <DataType>RX RSSI</DataType>
   </Category>
 </DataTypes>

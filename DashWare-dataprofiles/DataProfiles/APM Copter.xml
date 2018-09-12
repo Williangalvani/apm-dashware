@@ -461,6 +461,32 @@
         <OutputColumn>iCurrentAverage</OutputColumn>
       </OutputColumns>
     </AveragingCalculator>
+	<LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>RSSI_RXRSSI</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>iRSSI (%/100)</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>	
+	<MathCalculator mathOperation="Multiply" parameter="100" useConstantParameter="True">
+      <InputColumns>
+        <InputColumn>iRSSI (%/100)</InputColumn>
+        <InputColumn>
+        </InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>iRSSI (%)</OutputColumn>
+      </OutputColumns>
+    </MathCalculator>
+	<AveragingCalculator parameter="3" mode="Simple" direction="Backwards">
+      <InputColumns>
+        <InputColumn>iRSSI (%)</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>iRSSI Average</OutputColumn>
+      </OutputColumns>
+    </AveragingCalculator>
   </Calculators>
   <ColumnMappings>
     <ColumnMapping inputColumnText="iTime" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="&lt;Required&gt;" dataType="Data Running Time, Seconds" />
@@ -503,5 +529,6 @@
     <ColumnMapping inputColumnText="iClimbRate (mph)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Vertical Speed (MPH)" />
     <ColumnMapping inputColumnText="iClimbRate (kph)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Velocity" dataType="Vertical Speed (KPH)" />
     <ColumnMapping inputColumnText="iCurrentAverage" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Battery Ampere" />
+    <ColumnMapping inputColumnText="iRSSI Average" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="RX RSSI" />
   </ColumnMappings>
 </DataProfile>
