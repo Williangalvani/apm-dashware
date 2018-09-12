@@ -495,6 +495,26 @@
         <OutputColumn>iFuelUsed (mah)</OutputColumn>
       </OutputColumns>
     </LinearInterpolator>
+	<MathCalculator mathOperation="Subtract" parameter="5200" useConstantParameter="True">
+      <InputColumns>
+        <InputColumn>iFuelUsed (mah)</InputColumn>
+        <InputColumn>
+        </InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>iFuelRemaining (-mah)</OutputColumn>
+      </OutputColumns>
+    </MathCalculator>
+	<MathCalculator mathOperation="Multiply" parameter="-1" useConstantParameter="True">
+      <InputColumns>
+        <InputColumn>iFuelRemaining (-mah)</InputColumn>
+        <InputColumn>
+        </InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>iFuelRemaining (mah)</OutputColumn>
+      </OutputColumns>
+    </MathCalculator>
   </Calculators>
   <ColumnMappings>  
     <ColumnMapping inputColumnText="iTime" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="&lt;Required&gt;" dataType="Data Running Time, Seconds" />
@@ -536,7 +556,8 @@
     <ColumnMapping inputColumnText="iEngine RPM" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Engine RPM" />
     <ColumnMapping inputColumnText="iVoltageAverage" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Battery Voltage" />
     <ColumnMapping inputColumnText="iCurrentAverage" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Battery Ampere" />
-    <ColumnMapping inputColumnText="iFuelUsed (mah)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Fuel Used" />
+    <ColumnMapping inputColumnText="iFuelUsed (mah)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Fuel Used" />	
+    <ColumnMapping inputColumnText="iFuelRemaining (mah)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Fuel Remaining" />
     <ColumnMapping inputColumnText="iRSSI Average" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Flight Controller" dataType="RX RSSI" />		
     <ColumnMapping inputColumnText="CurrentMode" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Flight Controller" dataType="Flightmode" />
   </ColumnMappings>
