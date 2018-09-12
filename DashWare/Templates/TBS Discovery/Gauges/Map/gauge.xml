@@ -1,0 +1,26 @@
+<Gauge version="3" x="1565.641" y="62.5641" readOnly="False" width="268.1282" height="268.1282" transparency="1" rotation="0" thumbnailBackgroundTransparency="1" thumbnailBackgroundRed="135" thumbnailBackgroundGreen="206" thumbnailBackgroundBlue="235">
+  <Components>
+    <Image x="0" y="0" transparency="1" src="Capture.JPG" width="268.1282" height="268.1282">
+      <Components>
+        <Map x="25.5542" y="17.92607" width="228.8434" height="228.8434" align="Center" vAlign="Center" EvenPenWidth="2" EvenTransparency="1" EvenRed="255" EvenGreen="0" EvenBlue="0" OddPenWidth="1" OddTransparency="1" OddRed="0" OddGreen="0" OddBlue="0">
+          <Components>
+            <MapDot x="0" y="0" radius="5.041468" transparency="1" red="0" green="0" blue="255">
+              <Inputs>
+                <Input name="X">Longitude / X Position (Degrees)</Input>
+                <Input name="Y">Latitude / Y Position (Degrees)</Input>
+              </Inputs>
+            </MapDot>
+          </Components>
+          <Inputs>
+            <Input name="X">Longitude / X Position (Degrees)</Input>
+            <Input name="Y">Latitude / Y Position (Degrees)</Input>
+          </Inputs>
+        </Map>
+      </Components>
+    </Image>
+  </Components>
+  <Inputs>
+    <Input category="Positional" name="Longitude / X Position (Degrees)" fromFastestLapSamePos="False">Longitude / X Position (Degrees)</Input>
+    <Input category="Positional" name="Latitude / Y Position (Degrees)" fromFastestLapSamePos="False">Latitude / Y Position (Degrees)</Input>
+  </Inputs>
+</Gauge>

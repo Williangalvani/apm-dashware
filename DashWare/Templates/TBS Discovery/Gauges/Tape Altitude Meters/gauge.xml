@@ -1,0 +1,31 @@
+<Gauge version="3" x="1780.397" y="-5.147438" readOnly="False" width="180.6983" height="914.3664" transparency="0.9" rotation="0" thumbnailBackgroundTransparency="1" thumbnailBackgroundRed="135" thumbnailBackgroundGreen="206" thumbnailBackgroundBlue="235">
+  <Components>
+    <TickerTape x="48.68262" y="0" orientation="Vertial, Units on Left" reverse="False" minValue="-1000" maxValue="1000" loop="False" length="883.65" spacing="64.38846" labelOffset="11.59108" valueLineLength="78.54667" minorTickUnit="100" minorTickLength="17.38663" minorTickPenWidth="3.477326" minorTickTransparency="1" minorTickRed="255" minorTickGreen="255" minorTickBlue="255" majorTickUnit="2" majorTickLength="17.38663" majorTickPenWidth="5.795544" majorTickTransparency="1" majorTickRed="255" majorTickGreen="255" majorTickBlue="255" fontFace="Arial" fontSize="18.54573" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="left" fontVAlign="center" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255" valueLinePenWidth="2.307528" valueLineTransparency="1" valueLineRed="255" valueLineGreen="255" valueLineBlue="255">
+      <Components>
+        <FilledRectangle x="36.32776" y="454.5888" width="29.46871" height="4.636435" roundCorners="False" cornerRadius="5.795544" transparency="1" red="255" green="255" blue="255" />
+        <FilledRectangle x="31.69128" y="453.4298" width="29.46871" height="6.954653" roundCorners="False" cornerRadius="5.795544" transparency="1" red="255" green="255" blue="255" />
+        <FilledRectangle x="27.05493" y="452.2707" width="29.46871" height="9.272868" roundCorners="False" cornerRadius="5.795544" transparency="1" red="255" green="255" blue="255" />
+        <FilledRectangle x="-23.94592" y="440.6796" width="77.66029" height="32.45504" roundCorners="False" cornerRadius="5.795544" transparency="1" red="255" green="255" blue="255">
+          <Components>
+            <FilledRectangle x="2.318359" y="2.318176" width="73.02385" height="27.8186" roundCorners="False" cornerRadius="5.795544" transparency="1" red="32" green="29" blue="29">
+              <Components>
+                <DynamicText x="-3.477417" y="0" displayType="Integer" decimalPrecision="2" showPlus="False" restrictRange="False" restrictedMinValue="-3.40282346638529E+38" restrictedMaxValue="3.40282346638529E+38" convertFromGMT="True" fontRectWidth="76.50117" fontRectHeight="28.97771" fontFace="Arial" fontSize="16.22753" fontBold="False" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="right" fontVAlign="center" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255">
+                  <Inputs>
+                    <Input name="Value">Ground-Based Altitude (Meters)</Input>
+                  </Inputs>
+                </DynamicText>
+              </Components>
+            </FilledRectangle>
+          </Components>
+        </FilledRectangle>
+      </Components>
+      <Inputs>
+        <Input name="Value">Ground-Based Altitude (Meters)</Input>
+      </Inputs>
+    </TickerTape>
+    <Text x="11.78198" y="878.7408" text="METERS" fontRectWidth="120.5473" fontRectHeight="34.77326" fontFace="Arial" fontSize="11.59108" fontBold="True" fontItalic="True" fontUnderline="False" fontDirection="horizontal" fontAlign="left" fontVAlign="center" fontTransparency="1" fontRed="255" fontGreen="255" fontBlue="255" />
+  </Components>
+  <Inputs>
+    <Input category="Positional" name="Ground-Based Altitude (Meters)" fromFastestLapSamePos="False">Ground-Based Altitude (Meters)</Input>
+  </Inputs>
+</Gauge>

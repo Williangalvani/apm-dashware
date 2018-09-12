@@ -1,0 +1,6 @@
+<Gauge version="3" x="788.2051" y="440" readOnly="False" width="424.359" height="424.359" transparency="1" rotation="0" thumbnailBackgroundTransparency="1" thumbnailBackgroundRed="135" thumbnailBackgroundGreen="206" thumbnailBackgroundBlue="235">
+  <Components>
+    <Text x="0" y="0" text="MonRá" fontRectWidth="135.7949" fontRectHeight="53.04488" fontFace="Comic Sans MS" fontSize="25.46154" fontBold="True" fontItalic="False" fontUnderline="False" fontDirection="horizontal" fontAlign="left" fontVAlign="top" fontTransparency="1" fontRed="215" fontGreen="215" fontBlue="215" />
+  </Components>
+  <Inputs />
+</Gauge>

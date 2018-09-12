@@ -1,1 +1,1 @@
-sdlog2_dump.py "C:\Users\Greg\Dropbox\Flying\RC Flights\Solo Logs\log40.bin" -e -f solo40.csv -m GPS -m ATT -m NTUN -m CTUN -m MODE -m CURR -m RSSI
+sdlog2_dump.py "/mnt/c/Users/MonRa/Documents/Mission Planner/logs/QUADROTOR/1/filename.bin" -e -f filename.csv -m GPS -m ATT -m NTUN -m CTUN -m MODE -m CURR -m RSSI
