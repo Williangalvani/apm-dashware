@@ -535,6 +535,22 @@
         <OutputColumn>iFuelPercentage (%)</OutputColumn>
       </OutputColumns>
     </MathCalculator>
+	<LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>BARO_Press</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>iPressure</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
+	<LinearInterpolator filterValues="False" standardDevCeiling="5">
+      <InputColumns>
+        <InputColumn>BARO_Temp</InputColumn>
+      </InputColumns>
+      <OutputColumns>
+        <OutputColumn>iTemperature (C)</OutputColumn>
+      </OutputColumns>
+    </LinearInterpolator>
   </Calculators>
   <ColumnMappings>  
     <ColumnMapping inputColumnText="iTime" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="&lt;Required&gt;" dataType="Data Running Time, Seconds" />
@@ -580,6 +596,8 @@
     <ColumnMapping inputColumnText="iFuelRemaining (mah)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Fuel Remaining" />
     <ColumnMapping inputColumnText="iFuelPercentage (%)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Engine, Transmission" dataType="Fuel Percentage" />	
     <ColumnMapping inputColumnText="iRSSI Average" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Flight Controller" dataType="RX RSSI" />		
-    <ColumnMapping inputColumnText="CurrentMode" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Flight Controller" dataType="Flightmode" />
+    <ColumnMapping inputColumnText="CurrentMode" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Flight Controller" dataType="Flightmode" />	
+    <ColumnMapping inputColumnText="iPressure" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Environment" dataType="Barometric Pressure (kPa)" />		
+    <ColumnMapping inputColumnText="iTemperature (C)" inputColumnMatchMode="ExactMatch" inputColumnIgnoreCase="False" dataCategory="Environment" dataType="Air Temperature (C)" />
   </ColumnMappings>
 </DataProfile>

@@ -1,1 +1,1 @@
-sdlog2_dump.py "/mnt/c/Users/MonRa/Documents/Mission Planner/logs/QUADROTOR/1/filename.bin" -e -f filename.csv -m GPS -m ATT -m NTUN -m CTUN -m MODE -m CURR -m RSSI
+sdlog2_dump.py "/mnt/c/Users/MonRa/Documents/Mission Planner/logs/QUADROTOR/1/filename.bin" -e -f filename.csv -m GPS -m ATT -m NTUN -m CTUN -m MODE -m CURR -m RSSI -m BARO
